@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/object-diagram
+header Bibliothek Objektdiagramm
+
+/'
+- Eine Person kann mehre Bücher ausleihen.
+- Ein Buch kann gleichzeitig nur einmal ausgeliehen werden.
+- Ein Buch kann aber mehrmals reserviert sein.
+- Eine Person kann mehrere Bücher reservieren.
+'/
+
+object Buch1
+object Buch2
+object Buch3
+object Buch4
+
+object Person1
+object Person2
+object Person3
+object Person4
+
+
+Person1 "ausgelehnt" -- Buch1
+Person1 "ausgelehnt" -- Buch2
+
+Person2 "ausgelehnt" -- Buch3
+Person2 "reserviert" -- Buch2
+
+Person3 "reserviert" -- Buch2
+Person3 "reserviert" -- Buch1
+
+@enduml
