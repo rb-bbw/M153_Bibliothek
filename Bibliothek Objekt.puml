@@ -7,26 +7,46 @@ header Bibliothek Objektdiagramm
 - Ein Buch kann gleichzeitig nur einmal ausgeliehen werden.
 - Ein Buch kann aber mehrmals reserviert sein.
 - Eine Person kann mehrere Bücher reservieren.
+- Es soll bekannt sein, wann ein Buch ausgeliehen wurde.
+- Es soll bekannt sein, wann es von wem reserviert wurde.
 '/
-
-object Buch1
-object Buch2
-object Buch3
-object Buch4
 
 object Person1
 object Person2
 object Person3
 object Person4
 
+object Buch1 {
+    ausgeliehen_seit = "2021-11-11"
+}
+object Buch2 {
+    ausgeliehen_seit = "2021-11-11"
+}
+object Buch3 {
+    ausgeliehen_seit = "2021-11-11"
+}
+object Buch4
 
-Person1 "ausgelehnt" -- Buch1
-Person1 "ausgelehnt" -- Buch2
+object Reservation1 {
+    datum = "2021-11-11"
+}
+object Reservation2 {
+    datum = "2021-11-11"
+}
+object Reservation3 {
+    datum = "2021-11-11"
+}
 
-Person2 "ausgelehnt" -- Buch3
-Person2 "reserviert" -- Buch2
+Person1 "ausgeliehen" -- Buch1
+Person1 "ausgeliehen" -- Buch2
 
-Person3 "reserviert" -- Buch2
-Person3 "reserviert" -- Buch1
+Person2 "ausgeliehen" -- Buch3
+Person2 -- Reservation1
+Reservation1 -- Buch2
+
+Person3 -- Reservation2
+Reservation2 -- Buch2
+Person3 -- Reservation3
+Reservation3 -- Buch1
 
 @enduml
