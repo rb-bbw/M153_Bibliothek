@@ -16,16 +16,20 @@ object Person2
 object Person3
 object Person4
 
-object Buch1 {
-    ausgeliehen_seit = "2021-11-11"
-}
-object Buch2 {
-    ausgeliehen_seit = "2021-11-11"
-}
-object Buch3 {
-    ausgeliehen_seit = "2021-11-11"
-}
+object Buch1
+object Buch2
+object Buch3
 object Buch4
+
+object Ausleihe1 {
+    datum = "2021-11-11"
+}
+object Ausleihe2 {
+    datum = "2021-11-11"
+}
+object Ausleihe3 {
+    datum = "2021-11-11"
+}
 
 object Reservation1 {
     datum = "2021-11-11"
@@ -37,10 +41,13 @@ object Reservation3 {
     datum = "2021-11-11"
 }
 
-Person1 "ausgeliehen" -- Buch1
-Person1 "ausgeliehen" -- Buch2
+Person1 -- Ausleihe1
+Ausleihe1 -- Buch1
+Person1 -- Ausleihe2
+Ausleihe2 -- Buch2
 
-Person2 "ausgeliehen" -- Buch3
+Person2 -- Ausleihe3
+Ausleihe3 -- Buch3
 Person2 -- Reservation1
 Reservation1 -- Buch2
 
