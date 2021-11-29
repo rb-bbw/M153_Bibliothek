@@ -9,6 +9,7 @@ header Bibliothek Objektdiagramm
 - Eine Person kann mehrere Bücher reservieren.
 - Es soll bekannt sein, wann ein Buch ausgeliehen wurde.
 - Es soll bekannt sein, wann es von wem reserviert wurde.
+- Es soll bewusst sein, wie viel mal eine Person ein bestimmtes Buch schon ausgeliehen hat.
 '/
 
 object Person1
